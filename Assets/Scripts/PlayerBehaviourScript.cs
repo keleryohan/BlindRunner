@@ -25,9 +25,11 @@ public class PlayerBehaviourScript : MonoBehaviour
         _rigid2D = GetComponent<Rigidbody2D>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKey(upKey))
         {
             _horizontalAxis += horizontalStep * Time.deltaTime;
@@ -62,6 +64,7 @@ public class PlayerBehaviourScript : MonoBehaviour
         _rigid2D.AddForce(Vector2.up * _horizontalAxis*10);
         _rigid2D.AddForce(Vector2.right * _verticalAxis*10);
     }
+
 
     float Snap(float value,float magnitude)
     {

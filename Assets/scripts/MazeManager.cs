@@ -39,16 +39,16 @@ public class MazeManager : MonoBehaviour
 
     public IEnumerator SpawnCount()
     {
-        FrozePlayer1(true);
-        FrozePlayer2(true);
+        //FrozePlayer1(true);
+        //FrozePlayer2(true);
 
         yield return new WaitForSeconds(_wallsShowTime); 
         
         WallsVisibilityPlayer1(false);
         WallsVisibilityPlayer2(false);
 
-        FrozePlayer1(false);
-        FrozePlayer2(false);
+        //FrozePlayer1(false);
+        //FrozePlayer2(false);
     }
 
     private void WallsVisibilityPlayer1(bool visible)
@@ -76,5 +76,15 @@ public class MazeManager : MonoBehaviour
     {
         _player2.GetComponent<PlayerMovementTEMPORARIO>().enabled = !frozen;
     }
-    
+
+    public void RespawnPlayer(int playerId)
+    {
+        if(playerId == 1)
+        {
+            _player1.transform.position = _mazePlayer1.gameObject.transform.GetChild(1).gameObject.transform.position;
+        } else if(playerId == 2)
+        {
+            _player2.transform.position = _mazePlayer2.gameObject.transform.GetChild(1).gameObject.transform.position;
+        }
+    }
 }

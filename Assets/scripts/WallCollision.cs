@@ -5,27 +5,25 @@ using UnityEngine;
 public class WallCollision : MonoBehaviour
 {
     RespawnBehavior respawnBehavior;
-    //se é player 1 ou 2
-    //todo
-    int playerId = 1;
 
-    // Start is called before the first frame update
+    MazeManager _mazeManager;
+    
+    [SerializeField] int playerId = 1;
+    
     void Start()
     {
-        respawnBehavior = GameObject.Find("ScriptHolder").GetComponent<RespawnBehavior>();
+        //respawnBehavior = GameObject.Find("ScriptHolder").GetComponent<RespawnBehavior>();
+        _mazeManager = GameObject.Find("MazeManager").GetComponent<MazeManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Wall")
         {
-            respawnBehavior.PlayerCollidedWall(gameObject);
+          //  respawnBehavior.PlayerCollidedWall(gameObject);
+            _mazeManager.RespawnPlayer(playerId);
         }
     }
 }
