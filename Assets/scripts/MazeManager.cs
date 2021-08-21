@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class MazeManager : MonoBehaviour
 {
-    [SerializeField] private float _wallsShowTime = 2.0f;
+    [SerializeField] private float _CooldownTime = 3.0f;
 
     [SerializeField] private GameObject _mazePlayer1;
     [SerializeField] private GameObject _mazePlayer2;
 
     [SerializeField] private GameObject _player1;
     [SerializeField] private GameObject _player2;
+
+    private Vector3 _player1SpawnPoint;
+    private Vector3 _player2SpawnPoint;
+
+    private Vector3 _player1End;
+    private Vector3 _player2End;
 
     private List<SpriteRenderer> _wallsMazePlayer1;
     private List<SpriteRenderer> _wallsMazePlayer2;
@@ -30,61 +36,106 @@ public class MazeManager : MonoBehaviour
             _wallsMazePlayer2.Add(child.gameObject.GetComponent<SpriteRenderer>());
         }
 
-        _player1.transform.position = _mazePlayer1.gameObject.transform.GetChild(1).gameObject.transform.position;
-        _player2.transform.position = _mazePlayer2.gameObject.transform.GetChild(1).gameObject.transform.position;
+        _player1SpawnPoint = _mazePlayer1.gameObject.transform.GetChild(1).gameObject.transform.position;
+        _player2SpawnPoint = _mazePlayer2.gameObject.transform.GetChild(1).gameObject.transform.position;
         
-        StartCoroutine(SpawnCount());
+        StartCoolDown("Player1");
+        StartCoolDown("Player2");
     }
 
 
-    public IEnumerator SpawnCount()
+    public IEnumerator SpawnCount(string playerTag)
     {
-        //FrozePlayer1(true);
-        //FrozePlayer2(true);
+        ToggleWallVisibility(playerTag);
+        TogglePlayerMovement(playerTag);
 
-        yield return new WaitForSeconds(_wallsShowTime); 
+        yield return new WaitForSeconds(_CooldownTime); 
         
-        WallsVisibilityPlayer1(false);
-        WallsVisibilityPlayer2(false);
-
-        //FrozePlayer1(false);
-        //FrozePlayer2(false);
+        ToggleWallVisibility(playerTag);
+        TogglePlayerMovement(playerTag);
     }
 
-    private void WallsVisibilityPlayer1(bool visible)
+    public void StartCoolDown(string playerTag)
     {
-        foreach(SpriteRenderer wall in _wallsMazePlayer1)
+        if(playerTag == "Player1")
         {
-            wall.enabled = visible;
+            RespawnPlayer(playerTag);
+            StartCoroutine(SpawnCount(playerTag));
+
+        } else if(playerTag == "Player2")
+        {
+            RespawnPlayer(playerTag);
+            StartCoroutine(SpawnCount(playerTag));
         }
     }
 
-    private void WallsVisibilityPlayer2(bool visible)
+
+    public void RespawnPlayer(string playerTag)
     {
-        foreach (SpriteRenderer wall in _wallsMazePlayer2)
+        if(playerTag == "Player1")
         {
-            wall.enabled = visible;
+            _player1.transform.position = _player1SpawnPoint;
+
+        } 
+        else if(playerTag == "Player2")
+        {
+            _player2.transform.position = _player2SpawnPoint;
         }
     }
 
-    private void FrozePlayer1(bool frozen)
+    private void TogglePlayerMovement(string playerTag)
     {
-        _player1.GetComponent<PlayerMovementTEMPORARIO>().enabled = !frozen;
+        PlayerMovementTEMPORARIO playerMovement;
+
+        if(playerTag == "Player1")
+        {
+            Debug.Log("entrou");
+            playerMovement = _player1.GetComponent<PlayerMovementTEMPORARIO>();
+            Debug.Log(playerMovement);
+        } 
+        else if(playerTag == "Player2")
+        {
+            playerMovement = _player2.GetComponent<PlayerMovementTEMPORARIO>();
+        }
+        else
+        {
+            return;
+        }
+
+        if(playerMovement.enabled)
+        {
+            playerMovement.enabled = false;
+        } 
+        else {
+            playerMovement.enabled = true;
+        }
     }
 
-    private void FrozePlayer2(bool frozen)
+    private void ToggleWallVisibility(string playerTag)
     {
-        _player2.GetComponent<PlayerMovementTEMPORARIO>().enabled = !frozen;
-    }
+        List<SpriteRenderer> wallsOfMaze;
 
-    public void RespawnPlayer(int playerId)
-    {
-        if(playerId == 1)
+        if(playerTag == "Player1")
         {
-            _player1.transform.position = _mazePlayer1.gameObject.transform.GetChild(1).gameObject.transform.position;
-        } else if(playerId == 2)
+            wallsOfMaze = _wallsMazePlayer1;
+        } else if(playerTag == "Player2")
         {
-            _player2.transform.position = _mazePlayer2.gameObject.transform.GetChild(1).gameObject.transform.position;
+            wallsOfMaze = _wallsMazePlayer2;
+        } else {
+            return;
+        }
+
+
+        foreach(SpriteRenderer wall in wallsOfMaze)
+        {
+            if(wall.enabled == true)
+            {
+                wall.enabled = false;
+            }
+            else 
+            {
+                wall.enabled = true;
+            }
         }
     }
 }

@@ -8,8 +8,6 @@ public class WallCollision : MonoBehaviour
 
     MazeManager _mazeManager;
     
-    [SerializeField] int playerId = 1;
-    
     void Start()
     {
         //respawnBehavior = GameObject.Find("ScriptHolder").GetComponent<RespawnBehavior>();
@@ -23,7 +21,8 @@ public class WallCollision : MonoBehaviour
         if(col.gameObject.tag == "Wall")
         {
           //  respawnBehavior.PlayerCollidedWall(gameObject);
-            _mazeManager.RespawnPlayer(playerId);
+            //_mazeManager.RespawnPlayer(playerId);
+            _mazeManager.StartCoolDown(this.gameObject.tag);
         }
     }
 }
