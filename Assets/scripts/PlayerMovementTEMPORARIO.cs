@@ -8,7 +8,6 @@ public class PlayerMovementTEMPORARIO : MonoBehaviour
     public string horizontal = "Horizontal";
     public string vertical = "Vertical";
 
-    // Script rapido só pra testes
     void Update()
     {
         float horizontalInput = Input.GetAxis(horizontal);
