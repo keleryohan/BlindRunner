@@ -694,9 +694,9 @@ GameObject:
   - component: {fileID: 1426937472}
   - component: {fileID: 1426937474}
   - component: {fileID: 1426937477}
+  - component: {fileID: 1426937478}
   - component: {fileID: 1426937475}
   - component: {fileID: 1426937476}
-  - component: {fileID: 1426937478}
   m_Layer: 0
   m_Name: Player1Test
   m_TagString: Player1
@@ -858,6 +858,7 @@ MonoBehaviour:
   _oponentPlayer: {fileID: 1926228496}
   _power1: 49
   _power2: 50
+  _power3: 51
   _powerCoolDown: 5
 --- !u!1001 &1865218642
 PrefabInstance:
@@ -1096,4 +1097,5 @@ MonoBehaviour:
   _oponentPlayer: {fileID: 1426937471}
   _power1: 257
   _power2: 258
+  _power3: 259
   _powerCoolDown: 5
