@@ -10,12 +10,16 @@ public class Powers : MonoBehaviour
         normal = 10,
         slowed = 1,
         stopped = 0
-    } 
+    }
 
     [SerializeField] GameObject _oponentPlayer;
     [SerializeField] KeyCode _power1;
     [SerializeField] KeyCode _power2;
     [SerializeField] KeyCode _power3;
+
+    bool _power1Used = false;
+    bool _power2Used = false;
+    bool _power3Used = false;
 
     [SerializeField] float _powerCoolDown = 5.0f;
 
@@ -25,21 +29,24 @@ public class Powers : MonoBehaviour
     {
         if(!_isPowerActive)
         {
-            if(Input.GetKey(_power1))
+            if(Input.GetKey(_power1) && !_power1Used)
             {
+                _power1Used = true;
                 StartCoroutine(Slow());
                 string mensagem = "Power 1 ativado no " + this.gameObject.tag + " contra o " + _oponentPlayer.gameObject.tag;
                 Debug.Log(mensagem);
 
             }
-            else if(Input.GetKey(_power2))
+            else if(Input.GetKey(_power2) && !_power2Used)
             {
+                _power2Used = true;
                 StartCoroutine(Freeze());
                 string mensagem2 = "Power 2 ativado no " + this.gameObject.tag + " contra o " + _oponentPlayer.gameObject.tag;
                 Debug.Log(mensagem2);
             }
-            else if (Input.GetKey(_power3))
+            else if (Input.GetKey(_power3) && !_power3Used)
             {
+                _power3Used = true;
                 StartCoroutine(SpeedUp());
                 string mensagem3 = "Power 3 ativado no " + this.gameObject.tag + " contra o " + _oponentPlayer.gameObject.tag;
                 Debug.Log(mensagem3);
