@@ -21,6 +21,8 @@ public class MazeManager : MonoBehaviour
     private List<SpriteRenderer> _wallsMazePlayer1;
     private List<SpriteRenderer> _wallsMazePlayer2;
 
+    private bool _hasStarted = false;
+
     void Start()
     {
         _wallsMazePlayer1 = new List<SpriteRenderer>();
@@ -41,12 +43,17 @@ public class MazeManager : MonoBehaviour
         
         StartCoolDown("Player1");
         StartCoolDown("Player2");
+
+        _hasStarted = true;
     }
 
 
     public IEnumerator SpawnCount(string playerTag)
     {
-        ToggleWallVisibility(playerTag);
+        if(_hasStarted)
+        {
+            ToggleWallVisibility(playerTag);
+        }
         TogglePlayerMovement(playerTag);
 
         yield return new WaitForSeconds(_CooldownTime); 
