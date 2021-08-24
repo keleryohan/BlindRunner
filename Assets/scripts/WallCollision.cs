@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class WallCollision : MonoBehaviour
 {
-    RespawnBehavior respawnBehavior;
-
     MazeManager _mazeManager;
     
     void Start()
     {
-        //respawnBehavior = GameObject.Find("ScriptHolder").GetComponent<RespawnBehavior>();
         _mazeManager = GameObject.Find("MazeManager").GetComponent<MazeManager>();
     }
 
@@ -20,7 +17,6 @@ public class WallCollision : MonoBehaviour
     {
         if(col.gameObject.tag == "Wall")
         {
-          //  respawnBehavior.PlayerCollidedWall(gameObject);
             //_mazeManager.RespawnPlayer(playerId);
             _mazeManager.StartCoolDown(this.gameObject.tag);
         }
