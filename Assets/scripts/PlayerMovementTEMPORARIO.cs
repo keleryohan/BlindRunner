@@ -17,6 +17,7 @@ public class PlayerMovementTEMPORARIO : MonoBehaviour
         transform.position += new Vector3(horizontalInput, verticalInput, transform.position.z) * Time.deltaTime * speed;
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("SpeedPower"))
