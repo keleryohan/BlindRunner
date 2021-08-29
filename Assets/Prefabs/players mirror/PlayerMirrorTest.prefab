@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 2857480394423831322}
   - component: {fileID: 607809450632835905}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerMirrorTest
   m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

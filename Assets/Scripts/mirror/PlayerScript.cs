@@ -31,7 +31,7 @@ public class PlayerScript : NetworkBehaviour
         sceneScript = GameObject.Find("SceneReference").GetComponent<SceneReference>().sceneScript;
     }
 
-    void OnNameChanged(string _Old, string _New)
+     void OnNameChanged(string _Old, string _New)
     {
         playerNameText.text = playerName;
     }
