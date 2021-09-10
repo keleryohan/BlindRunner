@@ -5,6 +5,7 @@ using Mirror;
 
 public class PlayerManager : NetworkBehaviour
 {
+
     [SyncVar]
     public int playerCount;
 
@@ -13,15 +14,4 @@ public class PlayerManager : NetworkBehaviour
         playerCount = 1;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
