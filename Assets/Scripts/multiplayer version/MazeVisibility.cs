@@ -6,16 +6,6 @@ using Mirror;
 
 public class MazeVisibility : NetworkBehaviour
 {
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("1");
-            toggleWallVisibility();
-        }
-    }
-
-
     public void toggleWallVisibility()
     {
         if (!isLocalPlayer)
@@ -38,4 +28,12 @@ public class MazeVisibility : NetworkBehaviour
 
         }
     }
+
+    public IEnumerator WallVisibilityCooldown()
+    {
+        toggleWallVisibility();
+        yield return new WaitForSeconds(3.0f); 
+        toggleWallVisibility();
+    }
+
 }
