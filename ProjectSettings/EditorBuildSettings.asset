@@ -6,21 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Mirror/Menu.unity
+    path: Assets/Scenes/Mirror testing/Menu.unity
     guid: 4a81749217924434696c7a70b6fee177
   - enabled: 1
-    path: Assets/Scenes/Mirror/GameSList.unity
+    path: Assets/Scenes/Mirror testing/GamesList.unity
     guid: c13d48cab9148304fb4d56839ae5dd65
   - enabled: 1
-    path: Assets/Scenes/Mirror/MirrorTest.unity
+    path: Assets/Scenes/Mirror testing/MirrorTest.unity
     guid: 338824047b049954d98c9eab600892e6
   - enabled: 1
-    path: Assets/Scenes/Mirror/2MirrorTest.unity
+    path: Assets/Scenes/Mirror testing/2MirrorTest.unity
     guid: 26641d21a13a11a4c9488ad55e217dc6
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
+    path: Assets/Scenes/singleplayer/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/LabManageTest.unity
+    path: Assets/Scenes/singleplayer/LabManageTest.unity
     guid: d0dbe6ac7cbbbb74ba49326646045500
+  - enabled: 1
+    path: Assets/Scenes/multiplayer version/OfflineMenu.unity
+    guid: 22ea0651bd6d66447a0e6a4b24541991
+  - enabled: 1
+    path: Assets/Scenes/multiplayer version/MirrorLabManageTest.unity
+    guid: c23947552e53c1641acbbfa607b44aba
   m_configObjects: {}
