@@ -425,11 +425,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8525291812281511424, guid: f0d581f6e58c0da47afbc40e005be4ef, type: 3}
       propertyPath: onlineScene
-      value: Assets/Scenes/MirrorLabManageTest.unity
+      value: Assets/Scenes/multiplayer version/MirrorLabManageTest.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8525291812281511424, guid: f0d581f6e58c0da47afbc40e005be4ef, type: 3}
       propertyPath: offlineScene
-      value: Assets/Scenes/MirrorLabManageTest.unity
+      value: Assets/Scenes/multiplayer version/MirrorLabManageTest.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8525291812281511424, guid: f0d581f6e58c0da47afbc40e005be4ef, type: 3}
       propertyPath: playerPrefab
@@ -539,7 +539,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 15
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
