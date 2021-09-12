@@ -9,12 +9,23 @@ public class PlayerMovimentMP : NetworkBehaviour
     public string horizontal = "Horizontal";
     public string vertical = "Vertical";
     public bool _isFreeze = false;
+    GameStatus gameStatus;
+
+    private void Start()
+    {
+        gameStatus = GameObject.FindObjectOfType<GameStatus>();
+    }
 
     void Update()
     {
         if (!isLocalPlayer)
         {
             // make non-local players run this
+            return;
+        }
+        //não disponibilize controles sem o jogo ter começado
+        if (!gameStatus.gameStarted)
+        {
             return;
         }
         if(!_isFreeze)

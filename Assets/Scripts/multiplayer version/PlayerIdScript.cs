@@ -17,7 +17,7 @@ public class PlayerIdScript : NetworkBehaviour
 
     public override void OnStartLocalPlayer()
     {
-        playerId = playerManager.playerCount;
+        playerId = playerManager.playerCount+1;
         
         increaseId();
 
@@ -29,7 +29,7 @@ public class PlayerIdScript : NetworkBehaviour
     void increaseId()
     {
         playerManager.playerCount++;
-        
+        GameObject.FindObjectOfType<GameStatus>().checkGameStatus();
     }
 
 

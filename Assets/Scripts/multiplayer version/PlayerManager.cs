@@ -10,7 +10,7 @@ public class PlayerManager : NetworkBehaviour
 
     private void Awake()
     {
-        playerCount = 1;
+        playerCount = 0;
     }
 
     // Start is called before the first frame update
