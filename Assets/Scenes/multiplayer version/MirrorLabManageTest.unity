@@ -759,6 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  gameStarted: 0
 --- !u!1 &1747240351
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +862,50 @@ PrefabInstance:
     - target: {fileID: 3781566993143034556, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
       propertyPath: m_Name
       value: Maze
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974808344454322, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974808668504515, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974808744624789, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974808898580276, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974809387892356, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974809802820349, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974809980548719, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974810060727442, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974810210943443, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974810247420506, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571974810265990343, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd2f08dce4676464caabd2b28b0c762f, type: 3}

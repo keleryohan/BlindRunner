@@ -23,7 +23,7 @@ public class PlayerMovimentMP : NetworkBehaviour
             // make non-local players run this
             return;
         }
-        //não disponibilize controles sem o jogo ter começado
+        //nï¿½o disponibilize controles sem o jogo ter comeï¿½ado
         if (!gameStatus.gameStarted)
         {
             return;
@@ -40,11 +40,12 @@ public class PlayerMovimentMP : NetworkBehaviour
     //player entrar no server
     public override void OnStartLocalPlayer()
     {
+        /*
         if (isLocalPlayer)
         {
             FreezePlayer();    
         }
-        
+        */
         Camera.main.transform.SetParent(transform);
         Camera.main.transform.localPosition = new Vector3(0, 0, -5);
     }
