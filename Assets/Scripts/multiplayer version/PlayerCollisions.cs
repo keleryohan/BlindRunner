@@ -19,5 +19,4 @@ public class PlayerCollisions : NetworkBehaviour
             _playerSpawner.SpawnPlayer();
         }
     }
-
 }
