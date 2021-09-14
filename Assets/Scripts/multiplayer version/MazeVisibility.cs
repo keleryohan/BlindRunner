@@ -12,8 +12,7 @@ public class MazeVisibility : NetworkBehaviour
         {
             return;
         }
-        Debug.Log("2");
-        GameObject wallList = GameObject.Find("Maze").transform.Find("Walls").gameObject;
+        GameObject wallList = GameObject.FindGameObjectWithTag("Maze").transform.Find("Walls").gameObject;
 
         foreach (Transform wall in wallList.transform)
         {

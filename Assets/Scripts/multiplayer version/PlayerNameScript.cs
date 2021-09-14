@@ -18,7 +18,15 @@ public class PlayerNameScript : NetworkBehaviour
 
     public override void OnStartLocalPlayer()
     {
-        string name = GameObject.Find("SceneManager").GetComponent<SceneManagerMP>().auxPlayerName;
+        string name;
+        try
+        {
+            name = GameObject.Find("SceneManager").GetComponent<SceneManagerMP>().auxPlayerName;
+        }
+        catch
+        {
+            name = "Player" + Random.Range(100, 999);
+        }
         if (name == null || name == "")
         {
             name = "Player" + Random.Range(100, 999);

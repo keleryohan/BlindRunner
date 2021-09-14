@@ -8,6 +8,7 @@ TagManager:
   - SpeedPower
   - Player1
   - Player2
+  - Maze
   layers:
   - Default
   - TransparentFX

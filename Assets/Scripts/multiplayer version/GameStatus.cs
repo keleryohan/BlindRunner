@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Mirror;
 
 public class GameStatus : NetworkBehaviour
@@ -11,6 +12,7 @@ public class GameStatus : NetworkBehaviour
     public bool gameStarted = false;
 
     // Start is called before the first frame update
+
     void Start()
     {
         playerManager = GetComponent<PlayerManager>();
